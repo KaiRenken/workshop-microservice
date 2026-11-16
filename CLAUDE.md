@@ -8,7 +8,9 @@ Spring-Boot-Microservice in Kotlin (Workshop-Projekt, Paket `de.neusta.workshopm
 
 ## Befehle
 
-Build-Tool ist Maven über den Wrapper (Maven 3.10.0). Unter Windows `mvnw.cmd` statt `./mvnw` verwenden.
+Build-Tool ist Maven über den Wrapper (Maven 3.9.11). Unter Windows `mvnw.cmd` statt `./mvnw` verwenden.
+
+Maven bewusst nicht auf 3.10.x anheben: Der Maven-Import von IntelliJ IDEA 2025.3 (Einstellung „Use Maven wrapper“) scheitert mit Maven 3.10.0 (`Guice/MissingImplementation: No implementation for ArtifactHandlerManager`). Das Modul hat dann keine Abhängigkeiten, und alle Spring-Importe werden als nicht auflösbar angezeigt.
 
 ```bash
 ./mvnw clean package                 # Bauen inkl. Tests, erzeugt ausführbares JAR in target/
